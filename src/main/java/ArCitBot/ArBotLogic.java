@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class ArBotLogic extends TelegramLongPollingBot {
 
     final public String BOT_NAME = "CitizenBot";
-    final public String BOT_TOKEN = "6826020090:AAHq6m_qhZ87SV42sBC8wYoXQmtMJk0XcwM";
+    final public String BOT_TOKEN = "";
 
     ArBotStorage storage;
 
