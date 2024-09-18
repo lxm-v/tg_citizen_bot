@@ -63,7 +63,7 @@ public class ArBotLogic extends TelegramLongPollingBot {
         //Создаем один ряд кнопок и добавляем его в список
         KeyboardRow keyboardRow = new KeyboardRow();
         keyboardRows.add(keyboardRow);
-        //Добавляем одну кнопку с текстом "Просвяти" наш ряд
+        //Добавляем нужные кнопки
         keyboardRow.add(new KeyboardButton("Гражданина \uD83D\uDC68\u200D\uD83E\uDDB0"));
         keyboardRow.add(new KeyboardButton("Гражданку \uD83D\uDC69\uD83C\uDFFB\u200D\uD83E\uDDB0"));
         //добавляем лист с одним рядом кнопок в главный объект
@@ -79,14 +79,14 @@ public class ArBotLogic extends TelegramLongPollingBot {
             {
                 //Извлекаем из объекта сообщение пользователя
                 Message inMess = update.getMessage();
-                //Достаем из inMess id чата пользователя
+                //Достаем id чата пользователя
                 String chatId = inMess.getChatId().toString();
                 //Получаем текст сообщения пользователя, отправляем в написанный нами обработчик
                 String response = parseMessage(inMess.getText());
                 //Создаем объект класса SendMessage - наш будущий ответ пользователю
                 SendMessage outMess = new SendMessage();
 
-                //Добавляем в наше сообщение id чата а также наш ответ
+                //Добавляем в наше сообщение id чата и наш ответ
                 outMess.setChatId(chatId);
                 outMess.setText(response);
                 outMess.setReplyMarkup(replyKeyboardMarkup);
